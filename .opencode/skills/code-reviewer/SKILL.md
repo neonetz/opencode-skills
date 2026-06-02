@@ -4,7 +4,6 @@ description: Use when reviewing pull requests, conducting code quality audits, i
 license: MIT
 compatibility: opencode
 ---
----
 
 # Code Reviewer
 

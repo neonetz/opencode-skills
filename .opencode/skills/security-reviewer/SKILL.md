@@ -4,7 +4,6 @@ description: Use when conducting security audits, reviewing code for vulnerabili
 license: MIT
 compatibility: opencode
 ---
----
 
 # Security Reviewer
 

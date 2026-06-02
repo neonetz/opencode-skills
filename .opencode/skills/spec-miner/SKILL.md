@@ -4,7 +4,6 @@ description: "Use when working with legacy or undocumented systems, inherited pr
 license: MIT
 compatibility: opencode
 ---
----
 
 # Spec Miner
 
