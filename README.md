@@ -1,35 +1,47 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,25,27&height=200&section=header&text=Claude%20Skills&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=66%20Skills%20%E2%80%A2%209%20Workflows%20%E2%80%A2%20Built%20for%20Full-Stack%20Devs&descSize=20&descAlignY=55" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,25,27&height=200&section=header&text=OpenCode%20Skills&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=66%20Skills%20%E2%80%A2%20Converted%20for%20OpenCode&descSize=20&descAlignY=55" width="100%"/>
 </p>
 
 <p align="center">
-<a href="https://trendshift.io/repositories/20667" target="_blank"><img src="https://trendshift.io/api/badge/repositories/20667" alt="Jeffallan%2Fclaude-skills | Trendshift" style="width: 200px; height: 44px;" width="200" height="44"/></a>
-<a href="https://github.com/hesreallyhim/awesome-claude-code"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Claude Code" style="width: 200px; height: 44px;" width="200" height="44"/></a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/jeffallan/claude-skills"><img src="https://img.shields.io/badge/version-0.4.15-blue.svg?style=for-the-badge" alt="Version"/></a>
+  <a href="https://github.com/jeffallan/claude-skills"><img src="https://img.shields.io/badge/original-claude--skills-blue.svg?style=for-the-badge" alt="Original Repo"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge" alt="License"/></a>
-  <a href="https://github.com/jeffallan/claude-skills"><img src="https://img.shields.io/badge/Claude_Code-Plugin-purple.svg?style=for-the-badge" alt="Claude Code"/></a>
+  <a href="https://opencode.ai"><img src="https://img.shields.io/badge/OpenCode-Compatible-orange.svg?style=for-the-badge" alt="OpenCode"/></a>
   <a href="https://github.com/jeffallan/claude-skills/stargazers"><img src="https://img.shields.io/github/stars/jeffallan/claude-skills?style=for-the-badge&color=yellow" alt="Stars"/></a>
-  <a href="https://github.com/jeffallan/claude-skills/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/jeffallan/claude-skills/ci.yml?branch=main&style=for-the-badge&label=CI" alt="CI"/></a>
 </p>
 
 ---
 
+## About
+
+This repository is an **OpenCode-compatible conversion** of [**Jeffallan's claude-skills**](https://github.com/Jeffallan/claude-skills) — 66 specialized skills for full-stack developers, now available for OpenCode.
+
+All credit for the skill content goes to **Jeffallan**. This repo adapts the format to work with [OpenCode](https://opencode.ai).
+
+See [**CONVERSION.md**](CONVERSION.md) for the full conversion story, attribution, and sync guide.
+
 ## Quick Start
 
+### Local (skills available only in this repo directory)
+
 ```bash
-/plugin marketplace add jeffallan/claude-skills
-```
-**Then, install the skills:**
-```bash
-/plugin install fullstack-dev-skills@jeffallan
+git clone https://github.com/neonetz/opencode-skills.git
+cd opencode-skills
+opencode
 ```
 
-For all installation methods and first steps, see the [**Quick Start Guide**](QUICKSTART.md).
+### Global (skills available from any project)
 
-**Full documentation:** [jeffallan.github.io/claude-skills](https://jeffallan.github.io/claude-skills)
+```bash
+git clone https://github.com/neonetz/opencode-skills.git
+cd opencode-skills
+./install.sh           # copy to ~/.config/opencode/skills/
+# or
+./install.sh --symlink # symlink (easier to update later)
+```
+
+After installation, open OpenCode from any project — skills will appear in `<available_skills>` and the agent can load them via `skill({ name: "react-expert" })`.
+
+Skills are located in `.opencode/skills/` and OpenCode loads them automatically via the `skill` tool.
 
 ## Skills
 
@@ -37,20 +49,18 @@ For all installation methods and first steps, see the [**Quick Start Guide**](QU
 
 See [**Skills Guide**](SKILLS_GUIDE.md) for the full list, decision trees, and workflow combinations.
 
-## Usage Patterns
+## Usage in OpenCode
 
-### Context-Aware Activation
-
-Skills activate automatically based on your request:
+OpenCode auto-discovers skills from `.opencode/skills/`. Simply mention a relevant technology or problem:
 
 ```bash
 # Backend Development
 "Implement JWT authentication in my NestJS API"
-→ Activates: NestJS Expert → Loads: references/authentication.md
+→ Activates: NestJS Expert
 
-# Frontend Development
+# Frontend Development  
 "Build a React component with Server Components"
-→ Activates: React Expert → Loads: references/server-components.md
+→ Activates: React Expert
 ```
 
 ### Multi-Skill Workflows
@@ -63,10 +73,6 @@ Bug Investigation:   Debugging Wizard → Framework Expert → Test Master → C
 Security Hardening:  Secure Code Guardian → Security Reviewer → Test Master
 ```
 
-## Context Engineering
-
-Surface and validate Claude's hidden assumptions about your project with `/common-ground`. See the [**Common Ground Guide**](docs/COMMON_GROUND.md) for full documentation.
-
 ## Project Workflow
 
 The <!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> workflow commands manage epics from discovery through retrospectives, integrating with Jira and Confluence. See [**Workflow Commands Reference**](docs/WORKFLOW_COMMANDS.md) for the full command reference and lifecycle diagrams.
@@ -76,50 +82,39 @@ The <!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> workflow commands manage ep
 
 ## Documentation
 
-- [**Quick Start Guide**](QUICKSTART.md) - Installation and first steps
+- [**Conversion Guide**](CONVERSION.md) - Attribution, sync guide, and format changes
 - [**Skills Guide**](SKILLS_GUIDE.md) - Skill reference and decision trees
-- [**Common Ground**](docs/COMMON_GROUND.md) - Context engineering with `/common-ground`
+- [**OpenCode Skills Docs**](https://opencode.ai/docs/skills/) - Official OpenCode skill format
 - [**Workflow Commands**](docs/WORKFLOW_COMMANDS.md) - Project workflow commands guide
-- [**Atlassian MCP Setup**](docs/ATLASSIAN_MCP_SETUP.md) - Atlassian MCP server setup
-- [**Local Development**](docs/local_skill_development.md) - Local skill development
 - [**Contributing**](CONTRIBUTING.md) - Contribution guidelines
-- **skills/\*/SKILL.md** - Individual skill documentation
-- **skills/\*/references/** - Deep-dive reference materials
+- **.opencode/skills/*/SKILL.md** - Individual skill documentation
 
-## Contributing
+## Credits
 
-See [**Contributing**](CONTRIBUTING.md) for guidelines on adding skills, writing references, and submitting pull requests.
+This repository is a format conversion of the original **[claude-skills](https://github.com/Jeffallan/claude-skills)** project.
 
-## Changelog
+### Original Author
 
-See [Changelog](CHANGELOG.md) for full version history and release notes.
+**Jeffallan** — [GitHub](https://github.com/Jeffallan) · [Website](https://jeffallan.github.io) · [LinkedIn](https://www.linkedin.com/in/jeff-smolinski/)
 
-## License
-
-MIT License - See [LICENSE](LICENSE) file for details.
-
-## Support
-
-- **Issues:** [GitHub Issues](https://github.com/jeffallan/claude-skills/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/jeffallan/claude-skills/discussions)
-- **Repository:** [github.com/jeffallan/claude-skills](https://github.com/jeffallan/claude-skills)
-
-## Author
-
-Built by [**jeffallan**](https://jeffallan.github.io) [<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="16" height="16" alt="LinkedIn"/>](https://www.linkedin.com/in/jeff-smolinski/)
-
-**Principal Consultant** at [**Synergetic Solutions**](https://synergetic.solutions) [<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="16" height="16" alt="LinkedIn"/>](https://www.linkedin.com/company/synergetic-holdings)
+Principal Consultant at [Synergetic Solutions](https://synergetic.solutions)
 
 Fullstack engineering, security engineering, compliance, and technical due diligence.
 
-## Community
+### Conversion
 
-[![Stargazers repo roster for @Jeffallan/claude-skills](https://reporoster.com/stars/Jeffallan/claude-skills)](https://github.com/Jeffallan/claude-skills/stargazers)
+This OpenCode conversion by **neonetz** ([GitHub](https://github.com/neonetz))
 
-## Star History
+### License
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Jeffallan/claude-skills&type=date&legend=top-left)](https://www.star-history.com/#Jeffallan/claude-skills&type=date&legend=top-left)
+MIT License — See [LICENSE](LICENSE).
+
+### Support the Original
+
+- [Star the original repo](https://github.com/Jeffallan/claude-skills)
+- [Report issues upstream](https://github.com/Jeffallan/claude-skills/issues)
+- [View discussions](https://github.com/Jeffallan/claude-skills/discussions)
 
 ---
 
-**Built for Claude Code** | **<!-- WORKFLOW_COUNT -->9<!-- /WORKFLOW_COUNT --> Workflows** | **<!-- REFERENCE_COUNT -->366<!-- /REFERENCE_COUNT --> Reference Files** | **<!-- SKILL_COUNT -->66<!-- /SKILL_COUNT --> Skills**
+**Original by [Jeffallan](https://github.com/Jeffallan)** | **<!-- SKILL_COUNT -->66<!-- /SKILL_COUNT --> Skills** | **Converted for OpenCode**

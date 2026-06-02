@@ -1,5 +1,8 @@
 {
   "version": "0.4.15",
+  "description": "OpenCode conversion of Jeffallan's claude-skills",
+  "originalRepo": "https://github.com/Jeffallan/claude-skills",
+  "originalVersion": "0.4.15",
   "skillCount": 66,
   "workflowCount": 9,
   "referenceFileCount": 366
